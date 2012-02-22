@@ -116,7 +116,7 @@ NSInteger compareStringValue(id a, id b, void *context) {
                             andAction:(NSString*)action 
                           andPostData:(NSDictionary*)postData
 {
-    NSString *newUrl = [NSString stringWithFormat:@"%@&debug=y&r=%dZ", url,arc4random()];
+    NSString *newUrl = [NSString stringWithFormat:@"%@&r=%dZ", url,arc4random()];
 
 
     
