@@ -173,7 +173,7 @@ NSInteger compareStringValue(id a, id b, void *context) {
     NSString *response = [request responseString];       
   
     NSString *json = [[NSString alloc] initWithString:response];
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    PlaytomicSBJsonParser *parser = [[PlaytomicSBJsonParser alloc] init];
     NSArray *data = [parser objectWithString:json error:nil];
     NSInteger status = [[data valueForKey:@"Status"] integerValue];
     NSInteger errorcode = [[data valueForKey:@"ErrorCode"] integerValue];

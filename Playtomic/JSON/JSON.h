@@ -50,16 +50,16 @@
 
 #if 1
 
-#import "SBJsonParser.h"
-#import "SBJsonWriter.h"
-#import "NSObject+SBJSON.h"
-#import "NSString+SBJSON.h"
+#import "PlaytomicSBJsonParser.h"
+#import "PlaytomicSBJsonWriter.h"
+#import "NSObject+PlaytomicSBJSON.h"
+#import "NSString+PlaytomicSBJSON.h"
 
 #else
 
-#import <JSON/SBJsonParser.h>
-#import <JSON/SBJsonWriter.h>
-#import <JSON/NSObject+SBJSON.h>
-#import <JSON/NSString+SBJSON.h>
+#import <JSON/PlaytomicSBJsonParser.h>
+#import <JSON/PlaytomicSBJsonWriter.h>
+#import <JSON/NSObject+PlaytomicSBJSON.h>
+#import <JSON/NSString+PlaytomicSBJSON.h>
 
 #endif

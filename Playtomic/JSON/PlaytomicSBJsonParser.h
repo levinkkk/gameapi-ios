@@ -28,7 +28,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "SBJsonBase.h"
+#import "PlaytomicSBJsonBase.h"
 
 /**
  @brief The JSON parser class.
@@ -51,7 +51,7 @@
  We can thus avoid any loss of precision as JSON allows ridiculously large numbers.
  
  */
-@interface SBJsonParser : SBJsonBase {
+@interface PlaytomicSBJsonParser : PlaytomicSBJsonBase {
     
 @private
     const char *c;

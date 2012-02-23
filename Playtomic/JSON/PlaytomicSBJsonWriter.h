@@ -28,7 +28,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "SBJsonBase.h"
+#import "PlaytomicSBJsonBase.h"
 
 /**
  @brief The JSON writer class.
@@ -52,7 +52,7 @@
  way you would expect.
  
  */
-@interface SBJsonWriter : SBJsonBase {
+@interface PlaytomicSBJsonWriter : PlaytomicSBJsonBase {
 
 @private
     BOOL sortKeys, humanReadable;

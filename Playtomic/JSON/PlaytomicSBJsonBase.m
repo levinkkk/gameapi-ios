@@ -27,60 +27,52 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <Foundation/Foundation.h>
+#import "PlaytomicSBJsonBase.h"
+NSString * PlaytomicSBJSONErrorDomain = @"org.brautaset.JSON.ErrorDomain";
 
-extern NSString * SBJSONErrorDomain;
 
+@implementation PlaytomicSBJsonBase
 
-enum {
-    EUNSUPPORTED = 1,
-    EPARSENUM,
-    EPARSE,
-    EFRAGMENT,
-    ECTRL,
-    EUNICODE,
-    EDEPTH,
-    EESCAPE,
-    ETRAILCOMMA,
-    ETRAILGARBAGE,
-    EEOF,
-    EINPUT
-};
+@synthesize errorTrace;
+@synthesize maxDepth;
 
-/**
- @brief Common base class for parsing & writing.
-
- This class contains the common error-handling code and option between the parser/writer.
- */
-@interface SBJsonBase : NSObject {
-    NSMutableArray *errorTrace;
-
-@protected
-    NSUInteger depth, maxDepth;
+- (id)init {
+    self = [super init];
+    if (self)
+        self.maxDepth = 512;
+    return self;
 }
 
-/**
- @brief The maximum recursing depth.
- 
- Defaults to 512. If the input is nested deeper than this the input will be deemed to be
- malicious and the parser returns nil, signalling an error. ("Nested too deep".) You can
- turn off this security feature by setting the maxDepth value to 0.
- */
-@property NSUInteger maxDepth;
+- (void)dealloc {
+    [errorTrace release];
+    [super dealloc];
+}
 
-/**
- @brief Return an error trace, or nil if there was no errors.
- 
- Note that this method returns the trace of the last method that failed.
- You need to check the return value of the call you're making to figure out
- if the call actually failed, before you know call this method.
- */
- @property(copy,readonly) NSArray* errorTrace;
+- (void)addErrorWithCode:(NSUInteger)code description:(NSString*)str {
+    NSDictionary *userInfo;
+    if (!errorTrace) {
+        errorTrace = [NSMutableArray new];
+        userInfo = [NSDictionary dictionaryWithObject:str forKey:NSLocalizedDescriptionKey];
+        
+    } else {
+        userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                    str, NSLocalizedDescriptionKey,
+                    [errorTrace lastObject], NSUnderlyingErrorKey,
+                    nil];
+    }
+    
+    NSError *error = [NSError errorWithDomain:PlaytomicSBJSONErrorDomain code:code userInfo:userInfo];
 
-/// @internal for use in subclasses to add errors to the stack trace
-- (void)addErrorWithCode:(NSUInteger)code description:(NSString*)str;
+    [self willChangeValueForKey:@"errorTrace"];
+    [errorTrace addObject:error];
+    [self didChangeValueForKey:@"errorTrace"];
+}
 
-/// @internal for use in subclasess to clear the error before a new parsing attempt
-- (void)clearErrorTrace;
+- (void)clearErrorTrace {
+    [self willChangeValueForKey:@"errorTrace"];
+    [errorTrace release];
+    errorTrace = nil;
+    [self didChangeValueForKey:@"errorTrace"];
+}
 
 @end
