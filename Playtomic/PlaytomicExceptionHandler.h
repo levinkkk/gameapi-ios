@@ -15,8 +15,6 @@
 
 + (void) unregisterDefaultHandlers;
 
-+ (PlaytomicExceptionHandler*) getInstance;
-
-- (void) sendReportArray:(NSArray*)array;
++ (void) sendReportArray:(NSArray*)array;
                                  
 @end

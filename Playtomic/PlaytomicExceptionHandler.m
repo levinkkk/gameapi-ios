@@ -10,8 +10,8 @@
 #import "PlaytomicRequest.h"
 #import "PlaytomicURLRequest.h"
 #import "Playtomic.h"
+#include <execinfo.h>
 
-static PlaytomicExceptionHandler* sharedInstance = nil;
 
 void SignalHandler(int signal)
 {
@@ -34,7 +34,7 @@ void SignalHandler(int signal)
     }
     
     free(symbols);
-    [[PlaytomicExceptionHandler getInstance] sendReportArray:arr];
+    [PlaytomicExceptionHandler sendReportArray:arr];
 }
 
 void ExceptionHandler(NSException* exception)
@@ -49,20 +49,10 @@ void ExceptionHandler(NSException* exception)
         [arr addObject:[NSString stringWithUTF8String:symbols[i]]];
     }
     free(symbols);
-    [[PlaytomicExceptionHandler getInstance] sendReportArray:arr];
+    [PlaytomicExceptionHandler sendReportArray:arr];
 }
 
 @implementation PlaytomicExceptionHandler
-
-
-+ (PlaytomicExceptionHandler*) getInstance
-{
-    if( sharedInstance == nil)
-    {
-        sharedInstance = [[PlaytomicExceptionHandler alloc] init];
-    }
-    return sharedInstance;
-}
 
 + (void) registerDefaultHandlers
 {
@@ -77,7 +67,7 @@ void ExceptionHandler(NSException* exception)
     NSSetUncaughtExceptionHandler(&ExceptionHandler);
 }
 
-+ (void) unregusterDefaultHandlers
++ (void) unregisterDefaultHandlers
 {
     signal(SIGABRT, SIG_DFL);
     signal(SIGBUS, SIG_DFL);
@@ -90,17 +80,7 @@ void ExceptionHandler(NSException* exception)
     NSSetUncaughtExceptionHandler(NULL);
 }
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
-
-- (void) sendReportArray:(NSArray*)array
++ (void) sendReportArray:(NSArray*)array
 {
     
     NSString * stacktrace = [array description];
