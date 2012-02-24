@@ -110,7 +110,7 @@
 }
 
 - (void) view 
-{
+{   
     [self sendEvent:[NSString stringWithFormat:@"v/%d", self.views + 1] 
           andCommit:YES];
 }

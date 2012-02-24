@@ -195,7 +195,6 @@ static Playtomic *instance = nil;
              andGUID:(NSString*)gameguid 
            andAPIKey:(NSString*)apikey
 {
-    [PlaytomicExceptionHandler registerDefaultHandlers];
     NSString *model = [[UIDevice currentDevice] model];
     NSString *system = [[UIDevice currentDevice] systemName];
     NSString *version = [[UIDevice currentDevice] systemVersion];

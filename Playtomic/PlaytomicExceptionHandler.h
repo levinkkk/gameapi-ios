@@ -7,14 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PlaytomicResponse.h"
 
 @interface PlaytomicExceptionHandler : NSObject
 
 
 + (void) registerDefaultHandlers;
 
++ (void) registerDefaultHandlersWithDelegate:(id<PlaytomicDelegate>)pDelegate;
+
 + (void) unregisterDefaultHandlers;
 
 + (void) sendReportArray:(NSArray*)array;
+
                                  
 @end
