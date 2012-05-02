@@ -67,15 +67,15 @@
 		785E87461379FEAD00094336 /* PlaytomicGameVars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaytomicGameVars.h; sourceTree = "<group>"; };
 		785E87471379FEAD00094336 /* PlaytomicGameVars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaytomicGameVars.m; sourceTree = "<group>"; };
 		785E8864137A18A200094336 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		785E8866137A18A200094336 /* NSObject+PlaytomicSBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "NSObject+PlaytomicSBJSON.h"; sourceTree = "<group>"; };
+		785E8866137A18A200094336 /* NSObject+PlaytomicSBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PlaytomicSBJSON.h"; sourceTree = "<group>"; };
 		785E8867137A18A200094336 /* NSObject+PlaytomicSBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PlaytomicSBJSON.m"; sourceTree = "<group>"; };
-		785E8868137A18A200094336 /* NSString+PlaytomicSBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "NSString+PlaytomicSBJSON.h"; sourceTree = "<group>"; };
+		785E8868137A18A200094336 /* NSString+PlaytomicSBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PlaytomicSBJSON.h"; sourceTree = "<group>"; };
 		785E8869137A18A200094336 /* NSString+PlaytomicSBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PlaytomicSBJSON.m"; sourceTree = "<group>"; };
-		785E886A137A18A200094336 /* PlaytomicSBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; path = PlaytomicSBJsonBase.h; sourceTree = "<group>"; };
+		785E886A137A18A200094336 /* PlaytomicSBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaytomicSBJsonBase.h; sourceTree = "<group>"; };
 		785E886B137A18A200094336 /* PlaytomicSBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaytomicSBJsonBase.m; sourceTree = "<group>"; };
-		785E886C137A18A200094336 /* PlaytomicSBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; path = PlaytomicSBJsonParser.h; sourceTree = "<group>"; };
+		785E886C137A18A200094336 /* PlaytomicSBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaytomicSBJsonParser.h; sourceTree = "<group>"; };
 		785E886D137A18A200094336 /* PlaytomicSBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaytomicSBJsonParser.m; sourceTree = "<group>"; };
-		785E886E137A18A200094336 /* PlaytomicSBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; path = PlaytomicSBJsonWriter.h; sourceTree = "<group>"; };
+		785E886E137A18A200094336 /* PlaytomicSBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaytomicSBJsonWriter.h; sourceTree = "<group>"; };
 		785E886F137A18A200094336 /* PlaytomicSBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaytomicSBJsonWriter.m; sourceTree = "<group>"; };
 		7881E3FA135FB42600B4E7F5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7881E3FC135FB42600B4E7F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -443,7 +443,7 @@
 				GCC_PREFIX_HEADER = "ObjectiveCTest/ObjectiveCTest-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ObjectiveCTest/ObjectiveCTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../Downloads/Flurry iPhone SDK v2.8.4/FlurryLib\"",
@@ -465,7 +465,7 @@
 				GCC_PREFIX_HEADER = "ObjectiveCTest/ObjectiveCTest-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ObjectiveCTest/ObjectiveCTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../Downloads/Flurry iPhone SDK v2.8.4/FlurryLib\"",

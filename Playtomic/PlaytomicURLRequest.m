@@ -111,7 +111,7 @@
 - (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *) connectionError {
 	[connection release];
 	self.buffer = nil;
-    error = connectionError;
+    self.error = connectionError;
 	if(delegate)
     {
         if(failedSelected != nil && [delegate respondsToSelector:failedSelected])
