@@ -171,7 +171,8 @@
                          andMonth:(NSInteger)month 
                           andYear:(NSInteger)year
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     NSMutableDictionary * postData = [[[NSMutableDictionary alloc] init] autorelease];
@@ -209,7 +210,8 @@
                               andMonth:(NSInteger)month 
                                andYear:(NSInteger)year
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     NSMutableDictionary * postData = [[[NSMutableDictionary alloc] init] autorelease];
@@ -479,7 +481,8 @@
                              andMonth:(NSInteger)month 
                               andYear:(NSInteger)year
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     NSMutableDictionary * postData = [[[NSMutableDictionary alloc] init] autorelease];
@@ -687,7 +690,8 @@
                  andYear:(NSInteger)year 
              andDelegate:(id<PlaytomicDelegate>)aDelegate
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     NSMutableDictionary * postData = [[[NSMutableDictionary alloc] init] autorelease];
@@ -733,7 +737,8 @@
                   andDelegate:(id<PlaytomicDelegate>)aDelegate
 {
     delegate = aDelegate;
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     NSMutableDictionary * postData = [[[NSMutableDictionary alloc] init] autorelease];
@@ -1041,7 +1046,8 @@
         type = [PlaytomicEncrypt md5:[NSString stringWithFormat:@"%@%@", @"data-levelrangedmetric-", [Playtomic getApiKey]]];
     }
     
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     NSMutableDictionary * postData = [[[NSMutableDictionary alloc] init] autorelease];

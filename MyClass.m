@@ -49,7 +49,8 @@
         // Get your credentials from the Playtomic dashboard 
         // (add or select game then go to API page)
         //
-        [[Playtomic alloc] initWithGameId:4603 andGUID:@"9f3f3b43cb234025" andAPIKey:@"548435a4e71445b49f939fd33d5185"];
+        [[Playtomic alloc] initWithGameId:6918 andGUID:@"651351ba71994275" andAPIKey:@"50df92458b0249a8813df843d47b0a"];
+        [Playtomic setSSL];
         [PlaytomicExceptionHandler registerDefaultHandlersWithDelegate:self];
         [[Playtomic Log] view];
     }    

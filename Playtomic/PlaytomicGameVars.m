@@ -53,7 +53,8 @@
 
 - (PlaytomicResponse*)load
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=m"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=m"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -88,7 +89,8 @@
 
 - (void)loadAsync:(id<PlaytomicDelegate>)aDelegate
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=m"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=m"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     

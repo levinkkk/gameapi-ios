@@ -61,7 +61,8 @@
 //
 - (PlaytomicResponse*)loadLevelid:(NSString*)levelid
 {   
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -106,7 +107,8 @@
         return [[[PlaytomicResponse alloc] initWithError:401] autorelease];
     }
     
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -161,7 +163,8 @@
     NSString *datemaxsafe = datemax == nil ? @"" : [df stringFromDate:datemax];
     NSInteger numfilters = customfilter == nil ? 0 : [customfilter count];
     
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -234,7 +237,8 @@
 
 - (PlaytomicResponse*)saveLevel:(PlaytomicLevel*)level
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -308,7 +312,8 @@
 {
     levelid_ = [levelid copy];
     
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -388,7 +393,8 @@
         return;
     }
     
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -483,7 +489,8 @@
     [df release];
     NSInteger numfilters = customfilter == nil ? 0 : [customfilter count];
     
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -589,7 +596,8 @@
 - (void)saveAsyncLevel:(PlaytomicLevel*)level 
            andDelegate:(id<PlaytomicDelegate>)aDelegate
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     

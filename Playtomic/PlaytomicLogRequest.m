@@ -119,10 +119,10 @@ int const PLAYTOMIC_QUEUE_MAX_BYTES = 1048577; // actually the max size is 10485
 
 - (void)send
 {
-	NSString *fullurl = self.trackUrl;
-    fullurl = [fullurl stringByAppendingString:self.data];
+	NSString *fullurl = [NSString stringWithFormat:@"%@%@%@" ,[Playtomic getUrlStart], self.trackUrl, self.data];
+    //fullurl = [fullurl stringByAppendingString:self.data];
     
-    //NSLog(@"%@", fullurl);
+    NSLog(@"url=%@", fullurl);
     
     if ([Playtomic getIsWiFiActive])
     {    

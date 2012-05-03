@@ -54,6 +54,7 @@ extern int const PLAYTOMIC_QUEUE_MAX_BYTES;
     NSString *sourceUrl;
     NSString *apiKey;
     NSString *baseUrl;
+    NSString *urlStart;
     PlaytomicLog *log;
     PlaytomicGameVars *gameVars;
     PlaytomicGeoIP *geoIP;
@@ -68,6 +69,7 @@ extern int const PLAYTOMIC_QUEUE_MAX_BYTES;
     BOOL hostActive;
     BOOL internetActive;
     BOOL isWiFi;
+    BOOL useSSL;
     NSInteger offlineQueueMaxSize;
 }
 
@@ -101,6 +103,8 @@ extern int const PLAYTOMIC_QUEUE_MAX_BYTES;
 
 + (NSString*)getBaseUrl;
 
++ (NSString*)getUrlStart;
+
 + (BOOL)getInternetActive;
 
 + (BOOL)getIsWiFiActive;
@@ -108,5 +112,7 @@ extern int const PLAYTOMIC_QUEUE_MAX_BYTES;
 + (NSInteger)getOfflineQueueMaxSize;
 
 + (void)setOfflineQueueMaxSizeInKbytes:(NSInteger)size;
+
++ (void)setSSL;
 
 @end

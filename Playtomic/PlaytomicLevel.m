@@ -182,7 +182,8 @@
 
 - (NSString*)getThumbnailURL
 {
-    return [NSString stringWithFormat:@"http://g%@.api.playtomic.com/playerlevels/load.aspx?swfid=%d&levelid=%@"
+    return [NSString stringWithFormat:@"%@%@.api.playtomic.com/playerlevels/load.aspx?swfid=%d&levelid=%@"
+                                        , [Playtomic getUrlStart]
                                         , [Playtomic getGameGuid]
                                         , [Playtomic getGameId]
                                         , self.levelId];

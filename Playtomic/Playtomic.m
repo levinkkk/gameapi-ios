@@ -45,6 +45,7 @@
 @property (nonatomic,copy) NSString *sourceUrl;
 @property (nonatomic,copy) NSString *baseUrl;
 @property (nonatomic,copy) NSString *apiKey;
+@property (nonatomic,copy) NSString *urlStart;
 @property (retain) PlaytomicLog *log;
 @property (retain) PlaytomicGameVars *gameVars;
 @property (retain) PlaytomicGeoIP *geoIP;
@@ -56,6 +57,7 @@
 @property (assign) BOOL internetActive;
 @property (assign) NSInteger offlineQueueMaxSize;
 @property (nonatomic, assign) BOOL isWiFi;
+@property (nonatomic, assign) BOOL useSSL;
 @end
 
 @implementation Playtomic
@@ -75,7 +77,9 @@
 @synthesize internetActive;
 @synthesize offlineQueueMaxSize;
 @synthesize apiKey;
+@synthesize urlStart;
 @synthesize isWiFi;
+@synthesize useSSL;
 
 static Playtomic *instance = nil;
 
@@ -147,6 +151,11 @@ static Playtomic *instance = nil;
     return instance.baseUrl;
 }
 
++ (NSString*)getUrlStart
+{
+    return instance.urlStart;
+}
+
 + (BOOL)getInternetActive
 {
     // When the status is not connected we recheck
@@ -191,6 +200,13 @@ static Playtomic *instance = nil;
     }
 }
 
++ (void)setSSL
+{
+    instance.useSSL = YES;
+    instance.urlStart = @"https://g";
+    NSLog(@"You are now using SSL for your api requests.  This feature is for premium users only, if your account is not premium the data you send will be ignored.");    
+}
+
 - (id)initWithGameId:(NSInteger)gameid 
              andGUID:(NSString*)gameguid 
            andAPIKey:(NSString*)apikey
@@ -208,6 +224,7 @@ static Playtomic *instance = nil;
     instance.sourceUrl = [NSString stringWithFormat:@"http://ios.com/%@/%@/%@", model, system, version];
     instance.baseUrl = @"ios.com";
     instance.apiKey = apikey;
+    instance.urlStart = @"http://g";
 
     instance.log = [[[PlaytomicLog alloc] initWithGameId:gameid andGUID:gameguid]autorelease ];
     //instance.log = 0x131245;

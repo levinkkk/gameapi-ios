@@ -66,7 +66,8 @@
              andAllowDuplicates:(Boolean)allowduplicates
 {        
 
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -127,7 +128,8 @@
 {
     NSInteger numfilters = customfilter == nil ? 0 : [customfilter count];
         
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -231,7 +233,8 @@
                             andPerPage:(NSInteger)perpage 
                        andCustomFilter:(NSDictionary*) customfilter
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                                                , [Playtomic getUrlStart]
                                                 , [Playtomic getGameGuid]
                                                 , [Playtomic getGameId]];
     
@@ -356,7 +359,8 @@
 
 - (PlaytomicResponse*) createPrivateLeaderboardName:(NSString *)name andHighest:(Boolean)highest
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -404,7 +408,8 @@
 
 -(PlaytomicResponse*)loadPrivateLeaderboardTableId:(NSString*)tableid
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -454,7 +459,8 @@
     andAllowDuplicates:(Boolean)allowduplicates 
            andDelegate:(id<PlaytomicDelegate>)aDelegate;
 {     
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -547,7 +553,8 @@
 {
     NSInteger numfilters = customfilter == nil ? 0 : [customfilter count];
     
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -678,7 +685,8 @@
               andCustomFilter:(NSDictionary*)customfilter 
                   andDelegate:(id<PlaytomicDelegate>)aDelegate
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -834,7 +842,8 @@
                              andDelegate:(id<PlaytomicDelegate>)aDelegate
 {
     delegate = aDelegate;
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
 
@@ -913,7 +922,8 @@
                               andDelegate:(id<PlaytomicDelegate>)aDelegate
 {
     delegate = aDelegate;
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     

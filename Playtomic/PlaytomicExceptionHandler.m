@@ -113,7 +113,8 @@ void ExceptionHandler(NSException* exception)
     NSString * stacktrace = [array description];
     stacktrace = [PlaytomicRequest EscapeString:stacktrace];
     
-    NSString* url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/tracker/e.aspx?swfid=%d&url=%@",
+    NSString* url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/tracker/e.aspx?swfid=%d&url=%@",
+                     [Playtomic getUrlStart],
                      [Playtomic getGameGuid], [Playtomic getGameId], [Playtomic getSourceUrl]];
     
 //    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
