@@ -24,7 +24,6 @@
 	if (self != nil) {
 		if (sourceDomain != nil) {
 			self.domain = sourceDomain;
-            NSLog( sourceDomain );
             failedSelected = nil;
             request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:sourceDomain]];            
 		}
