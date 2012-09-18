@@ -91,14 +91,14 @@ and average-value metrics.
 
 	[[Playtomic Log] levelCounterMetric: name andLevel: levelname andUnique: unique];
 	[[Playtomic Log] levelCounterMetric: name andLevelNumber: levelnumber andUnique: unique];
-        
+    
 		(NSString*) name = your metric name
 		(NSString*) or (NSInteger) levelname / levelnumber = either a level number (int > 0) or a level name
 		(Boolean) unique = optional, only count unique-per-view occurrences
 
 	[[Playtomic Log] levelAverageMetric: name andLevel: levelname andValue: value andUnique: unique];
     [[Playtomic Log] levelAverageMetric: name andLevelNumber: levelnumber andValue: value andUnique: unique];
-        
+    
 		(NSString*) name = your metric name
 		(NSString*) or (NSInteger) levelname / levelnumber = either a level number (int > 0) or a level name
 		(NSInteger) value = the value you want to track
@@ -106,11 +106,9 @@ and average-value metrics.
 
 	[[Playtomic Log] levelRangedMetric: name andLevel: levelname andTrackValue: value andUnique: unique];
 	[[Playtomic Log] levelRangedMetric: name andLevelNumber: levenumber andTrackValue: value andUnique: unique];
-        
+    
 		(NSString*) name = your metric name
 		(NSString*) or (NSInteger) levelname / levelnumber = either a level number (int > 0) or a level name
-		(NSInteger) value = the value you want to track
-		(Boolean) unique = optional, only count unique-per-view occurrences 
 
 #### Leaderboards, level sharing, data and geoip 
 This stuff gets a little more complicated.  Please check the documentation 
