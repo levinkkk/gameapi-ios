@@ -18,21 +18,13 @@
 		78565DA0137DDBC80062E5D5 /* PlaytomicLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 78565D9F137DDBC80062E5D5 /* PlaytomicLink.m */; };
 		78565DA4137DDC9D0062E5D5 /* PlaytomicData.m in Sources */ = {isa = PBXBuildFile; fileRef = 78565DA3137DDC9D0062E5D5 /* PlaytomicData.m */; };
 		785E87481379FEAD00094336 /* PlaytomicGameVars.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E87471379FEAD00094336 /* PlaytomicGameVars.m */; };
-<<<<<<< HEAD:Playtomic iOS API.xcodeproj/project.pbxproj
-		785E8872137A18A200094336 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E8867137A18A200094336 /* NSObject+SBJSON.m */; };
-		785E8873137A18A200094336 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E8869137A18A200094336 /* NSString+SBJSON.m */; };
-		785E8874137A18A200094336 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E886B137A18A200094336 /* SBJsonBase.m */; };
-		785E8875137A18A200094336 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E886D137A18A200094336 /* SBJsonParser.m */; };
-		785E8876137A18A200094336 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E886F137A18A200094336 /* SBJsonWriter.m */; };
-		786509D416093A43003897F5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 786509D216093A43003897F5 /* LICENSE */; };
-		786509D516093A43003897F5 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 786509D316093A43003897F5 /* README.markdown */; };
-=======
 		785E8872137A18A200094336 /* NSObject+PlaytomicSBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E8867137A18A200094336 /* NSObject+PlaytomicSBJSON.m */; };
 		785E8873137A18A200094336 /* NSString+PlaytomicSBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E8869137A18A200094336 /* NSString+PlaytomicSBJSON.m */; };
 		785E8874137A18A200094336 /* PlaytomicSBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E886B137A18A200094336 /* PlaytomicSBJsonBase.m */; };
 		785E8875137A18A200094336 /* PlaytomicSBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E886D137A18A200094336 /* PlaytomicSBJsonParser.m */; };
 		785E8876137A18A200094336 /* PlaytomicSBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E886F137A18A200094336 /* PlaytomicSBJsonWriter.m */; };
->>>>>>> a6cb841a0bdd6cff9842959ffebc9412a9675e70:ObjectiveCTest.xcodeproj/project.pbxproj
+		786509DD16093D99003897F5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 786509DB16093D99003897F5 /* LICENSE */; };
+		786509DE16093D99003897F5 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 786509DC16093D99003897F5 /* README.markdown */; };
 		7881E3FB135FB42600B4E7F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7881E3FA135FB42600B4E7F5 /* UIKit.framework */; };
 		7881E3FD135FB42600B4E7F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7881E3FC135FB42600B4E7F5 /* Foundation.framework */; };
 		7881E3FF135FB42600B4E7F5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7881E3FE135FB42600B4E7F5 /* CoreGraphics.framework */; };
@@ -77,20 +69,6 @@
 		785E87461379FEAD00094336 /* PlaytomicGameVars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaytomicGameVars.h; sourceTree = "<group>"; };
 		785E87471379FEAD00094336 /* PlaytomicGameVars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaytomicGameVars.m; sourceTree = "<group>"; };
 		785E8864137A18A200094336 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-<<<<<<< HEAD:Playtomic iOS API.xcodeproj/project.pbxproj
-		785E8866137A18A200094336 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		785E8867137A18A200094336 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
-		785E8868137A18A200094336 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		785E8869137A18A200094336 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
-		785E886A137A18A200094336 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
-		785E886B137A18A200094336 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
-		785E886C137A18A200094336 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		785E886D137A18A200094336 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
-		785E886E137A18A200094336 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		785E886F137A18A200094336 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		786509D216093A43003897F5 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		786509D316093A43003897F5 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
-=======
 		785E8866137A18A200094336 /* NSObject+PlaytomicSBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PlaytomicSBJSON.h"; sourceTree = "<group>"; };
 		785E8867137A18A200094336 /* NSObject+PlaytomicSBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PlaytomicSBJSON.m"; sourceTree = "<group>"; };
 		785E8868137A18A200094336 /* NSString+PlaytomicSBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PlaytomicSBJSON.h"; sourceTree = "<group>"; };
@@ -101,13 +79,14 @@
 		785E886D137A18A200094336 /* PlaytomicSBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaytomicSBJsonParser.m; sourceTree = "<group>"; };
 		785E886E137A18A200094336 /* PlaytomicSBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaytomicSBJsonWriter.h; sourceTree = "<group>"; };
 		785E886F137A18A200094336 /* PlaytomicSBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaytomicSBJsonWriter.m; sourceTree = "<group>"; };
->>>>>>> a6cb841a0bdd6cff9842959ffebc9412a9675e70:ObjectiveCTest.xcodeproj/project.pbxproj
+		786509DB16093D99003897F5 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		786509DC16093D99003897F5 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		7881E3FA135FB42600B4E7F5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7881E3FC135FB42600B4E7F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7881E3FE135FB42600B4E7F5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		7881E402135FB42600B4E7F5 /* Playtomic iOS API-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Playtomic iOS API-Info.plist"; sourceTree = "<group>"; };
+		7881E402135FB42600B4E7F5 /* ObjectiveCTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ObjectiveCTest-Info.plist"; sourceTree = "<group>"; };
 		7881E404135FB42600B4E7F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7881E406135FB42600B4E7F5 /* Playtomic iOS API-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Playtomic iOS API-Prefix.pch"; sourceTree = "<group>"; };
+		7881E406135FB42600B4E7F5 /* ObjectiveCTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjectiveCTest-Prefix.pch"; sourceTree = "<group>"; };
 		7881E407135FB42600B4E7F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7881E409135FB42600B4E7F5 /* ObjectiveCTestAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectiveCTestAppDelegate.h; sourceTree = "<group>"; };
 		7881E40A135FB42600B4E7F5 /* ObjectiveCTestAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectiveCTestAppDelegate.m; sourceTree = "<group>"; };
@@ -175,8 +154,8 @@
 		7881E3EB135FB42600B4E7F5 = {
 			isa = PBXGroup;
 			children = (
-				786509D216093A43003897F5 /* LICENSE */,
-				786509D316093A43003897F5 /* README.markdown */,
+				786509DB16093D99003897F5 /* LICENSE */,
+				786509DC16093D99003897F5 /* README.markdown */,
 				7881E41F135FB46500B4E7F5 /* MyClass.h */,
 				7881E420135FB46500B4E7F5 /* MyClass.m */,
 				7881E400135FB42600B4E7F5 /* ObjectiveCTest */,
@@ -221,9 +200,9 @@
 			isa = PBXGroup;
 			children = (
 				7881E430135FB93500B4E7F5 /* PlaytomicLogRequest.h */,
-				7881E402135FB42600B4E7F5 /* Playtomic iOS API-Info.plist */,
+				7881E402135FB42600B4E7F5 /* ObjectiveCTest-Info.plist */,
 				7881E403135FB42600B4E7F5 /* InfoPlist.strings */,
-				7881E406135FB42600B4E7F5 /* Playtomic iOS API-Prefix.pch */,
+				7881E406135FB42600B4E7F5 /* ObjectiveCTest-Prefix.pch */,
 				7881E407135FB42600B4E7F5 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -354,12 +333,8 @@
 				7881E405135FB42600B4E7F5 /* InfoPlist.strings in Resources */,
 				7881E412135FB42700B4E7F5 /* MainWindow_iPhone.xib in Resources */,
 				7881E419135FB42700B4E7F5 /* MainWindow_iPad.xib in Resources */,
-<<<<<<< HEAD:Playtomic iOS API.xcodeproj/project.pbxproj
-				78F04DB2137C4D2F000C9E8D /* ASI LICENSE in Resources */,
-				786509D416093A43003897F5 /* LICENSE in Resources */,
-				786509D516093A43003897F5 /* README.markdown in Resources */,
-=======
->>>>>>> a6cb841a0bdd6cff9842959ffebc9412a9675e70:ObjectiveCTest.xcodeproj/project.pbxproj
+				786509DD16093D99003897F5 /* LICENSE in Resources */,
+				786509DE16093D99003897F5 /* README.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,15 +448,10 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-<<<<<<< HEAD:Playtomic iOS API.xcodeproj/project.pbxproj
-				GCC_PREFIX_HEADER = "ObjectiveCTest/Playtomic iOS API-Prefix.pch";
-				INFOPLIST_FILE = "ObjectiveCTest/Playtomic iOS API-Info.plist";
-=======
 				GCC_PREFIX_HEADER = "ObjectiveCTest/ObjectiveCTest-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ObjectiveCTest/ObjectiveCTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
->>>>>>> a6cb841a0bdd6cff9842959ffebc9412a9675e70:ObjectiveCTest.xcodeproj/project.pbxproj
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../Downloads/Flurry iPhone SDK v2.8.4/FlurryLib\"",
@@ -500,15 +470,10 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-<<<<<<< HEAD:Playtomic iOS API.xcodeproj/project.pbxproj
-				GCC_PREFIX_HEADER = "ObjectiveCTest/Playtomic iOS API-Prefix.pch";
-				INFOPLIST_FILE = "ObjectiveCTest/Playtomic iOS API-Info.plist";
-=======
 				GCC_PREFIX_HEADER = "ObjectiveCTest/ObjectiveCTest-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ObjectiveCTest/ObjectiveCTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
->>>>>>> a6cb841a0bdd6cff9842959ffebc9412a9675e70:ObjectiveCTest.xcodeproj/project.pbxproj
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../Downloads/Flurry iPhone SDK v2.8.4/FlurryLib\"",
