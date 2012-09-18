@@ -47,4 +47,6 @@
 + (void) generateKeyName:(NSString*)name andKey:(NSString*)key andArray:(NSMutableArray*)array;
 
 + (NSString*) joinArray:(NSMutableArray*)array;
+
++ (NSString*) EscapeString:(NSString*)string;
 @end

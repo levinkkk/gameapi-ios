@@ -30,18 +30,17 @@
 #import "PlaytomicEncrypt.h"
 #import "PlaytomicRequest.h"
 #import "JSON/JSON.h"
-#import "ASI/ASIFormDataRequest.h"
-#import "ASI/ASIHTTPRequest.h"
 #import "PlaytomicPrivateLeaderboard.h"
+#import "PlaytomicURLRequest.h"
 
 
 @interface PlaytomicLeaderboards() 
 
-- (void)requestSaveFinished:(ASIHTTPRequest*)request;
-- (void)requestListFinished:(ASIHTTPRequest*)request;
-- (void)requestSaveAndListFinished:(ASIHTTPRequest*)request;
-- (void)requestCreatePrivateFinished:(ASIHTTPRequest*) request;
-- (void)requestLoadPrivateFinished:(ASIHTTPRequest*) request;
+- (void)requestSaveFinished:(PlaytomicURLRequest*)request;
+- (void)requestListFinished:(PlaytomicURLRequest*)request;
+- (void)requestSaveAndListFinished:(PlaytomicURLRequest*)request;
+- (void)requestCreatePrivateFinished:(PlaytomicURLRequest*) request;
+- (void)requestLoadPrivateFinished:(PlaytomicURLRequest*) request;
 
 @end
 
@@ -56,7 +55,8 @@
              andAllowDuplicates:(Boolean)allowduplicates
 {        
 
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -117,7 +117,8 @@
 {
     NSInteger numfilters = customfilter == nil ? 0 : [customfilter count];
         
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -221,7 +222,8 @@
                             andPerPage:(NSInteger)perpage 
                        andCustomFilter:(NSDictionary*) customfilter
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                                                , [Playtomic getUrlStart]
                                                 , [Playtomic getGameGuid]
                                                 , [Playtomic getGameId]];
     
@@ -346,7 +348,8 @@
 
 - (PlaytomicResponse*) createPrivateLeaderboardName:(NSString *)name andHighest:(Boolean)highest
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -394,7 +397,8 @@
 
 -(PlaytomicResponse*)loadPrivateLeaderboardTableId:(NSString*)tableid
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -444,7 +448,8 @@
     andAllowDuplicates:(Boolean)allowduplicates 
            andDelegate:(id<PlaytomicDelegate>)aDelegate;
 {     
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -490,7 +495,7 @@
     [PlaytomicRequest sendRequestUrl:url andSection:section andAction:action andCompleteDelegate:self andCompleteSelector:@selector(requestSaveFinished:) andPostData:postData];    
 }
 
-- (void)requestSaveFinished:(ASIHTTPRequest*)request
+- (void)requestSaveFinished:(PlaytomicURLRequest*)request
 {
     if (!(delegate && [delegate respondsToSelector:@selector(requestSaveLeaderboardFinished:)])) {
         return;
@@ -506,13 +511,13 @@
     
     NSString *response = [request responseString];       
     NSString *json = [[NSString alloc] initWithString:response];
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    PlaytomicSBJsonParser *parser = [[PlaytomicSBJsonParser alloc] init];
     NSArray *data = [parser objectWithString:json error:nil];
     NSInteger status = [[data valueForKey:@"Status"] integerValue];
     
     [json release];
     [parser release];
-    
+    [request release];
     if(status == 1)
     {
         NSInteger errorcode = [[data valueForKey:@"ErrorCode"] integerValue];
@@ -537,7 +542,8 @@
 {
     NSInteger numfilters = customfilter == nil ? 0 : [customfilter count];
     
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -580,7 +586,7 @@
     delegate = aDelegate;    
 }
 
-- (void)requestListFinished:(ASIHTTPRequest*)request
+- (void)requestListFinished:(PlaytomicURLRequest*)request
 {
     if (!(delegate && [delegate respondsToSelector:@selector(requestListLeaderboardFinished:)])) {
         return;
@@ -598,14 +604,13 @@
     // we got a response of some kind
     NSString *response = [request responseString];
     NSString *json = [[NSString alloc] initWithString:response];
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    PlaytomicSBJsonParser *parser = [[PlaytomicSBJsonParser alloc] init];
     NSArray *data = [parser objectWithString:json error:nil];
     NSInteger status = [[data valueForKey:@"Status"] integerValue];
     
-    //[request autorelease];
     [json release];
     [parser release];
-    
+    [request release];
     // failed on the server side
     if(status != 1)
     {
@@ -669,7 +674,8 @@
               andCustomFilter:(NSDictionary*)customfilter 
                   andDelegate:(id<PlaytomicDelegate>)aDelegate
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -741,7 +747,7 @@
     delegate = aDelegate;
 }
 
-- (void)requestSaveAndListFinished:(ASIHTTPRequest*)request
+- (void)requestSaveAndListFinished:(PlaytomicURLRequest*)request
 {
     if (!(delegate && [delegate respondsToSelector:@selector(requestSaveAndListLeaderboardFinished:)])) {
         return;
@@ -757,7 +763,7 @@
     
     NSString *response = [request responseString];       
     NSString *json = [[NSString alloc] initWithString:response];
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    PlaytomicSBJsonParser *parser = [[PlaytomicSBJsonParser alloc] init];
     NSArray *data = [parser objectWithString:json error:nil];
     NSInteger status = [[data valueForKey:@"Status"] integerValue];
     
@@ -825,7 +831,8 @@
                              andDelegate:(id<PlaytomicDelegate>)aDelegate
 {
     delegate = aDelegate;
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
 
@@ -847,7 +854,7 @@
                  andCompleteSelector:@selector(requestCreatePrivateFinished:)
                          andPostData:postData];
 }
-- (void)requestCreatePrivateFinished:(ASIHTTPRequest*) request
+- (void)requestCreatePrivateFinished:(PlaytomicURLRequest*) request
 {
     if (!(delegate && [delegate respondsToSelector:@selector(requestCreateprivateLeaderboardFinish:)])) {
         return;
@@ -863,7 +870,7 @@
     
     NSString *response = [request responseString];       
     NSString *json = [[NSString alloc] initWithString:response];
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    PlaytomicSBJsonParser *parser = [[PlaytomicSBJsonParser alloc] init];
     NSArray *data = [parser objectWithString:json error:nil];
     NSInteger status = [[data valueForKey:@"Status"] integerValue];
     
@@ -904,7 +911,8 @@
                               andDelegate:(id<PlaytomicDelegate>)aDelegate
 {
     delegate = aDelegate;
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -926,7 +934,7 @@
     
 }
 
-- (void)requestLoadPrivateFinished:(ASIHTTPRequest*) request
+- (void)requestLoadPrivateFinished:(PlaytomicURLRequest*) request
 {
     if (!(delegate && [delegate respondsToSelector:@selector(requestLoadprivateLeaderboardFinish:)])) {
         return;
@@ -942,7 +950,7 @@
     
     NSString *response = [request responseString];       
     NSString *json = [[NSString alloc] initWithString:response];
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    PlaytomicSBJsonParser *parser = [[PlaytomicSBJsonParser alloc] init];
     NSArray *data = [parser objectWithString:json error:nil];
     NSInteger status = [[data valueForKey:@"Status"] integerValue];
     

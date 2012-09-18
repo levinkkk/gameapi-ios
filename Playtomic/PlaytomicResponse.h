@@ -102,5 +102,9 @@
 - (void)requestLevelMetricAverageDataFinished:(PlaytomicResponse*)response;
 - (void)requestLevelMetricRangeDataFinished:(PlaytomicResponse*)response;
 
+// exceptions
+
+- (NSString*)exceptionRaised:(NSException*)exception;
+- (NSString*)signalRaised:(int)signal;
 @end
 

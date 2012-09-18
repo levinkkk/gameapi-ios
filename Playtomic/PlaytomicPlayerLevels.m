@@ -27,17 +27,16 @@
 #import "PlaytomicResponse.h"
 #import "Playtomic.h"
 #import "JSON/JSON.h"
-#import "ASI/ASIFormDataRequest.h"
-#import "ASI/ASIHTTPRequest.h"
 #import "PlaytomicRequest.h"
 #include "PlaytomicEncrypt.h"
+#import "PlaytomicURLRequest.h"
 
 @interface PlaytomicPlayerLevels() 
 
-- (void)requestLoadFinished:(ASIHTTPRequest*)request;
-- (void)requestRateFinished:(ASIHTTPRequest*)request;
-- (void)requestListFinished:(ASIHTTPRequest*)request;
-- (void)requestSaveFinished:(ASIHTTPRequest*)request;
+- (void)requestLoadFinished:(PlaytomicURLRequest*)request;
+- (void)requestRateFinished:(PlaytomicURLRequest*)request;
+- (void)requestListFinished:(PlaytomicURLRequest*)request;
+- (void)requestSaveFinished:(PlaytomicURLRequest*)request;
 
 - (void)addLevel:(NSDictionary*)level 
       ForLevelid:(NSString*)levelid 
@@ -51,7 +50,8 @@
 //
 - (PlaytomicResponse*)loadLevelid:(NSString*)levelid
 {   
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -96,7 +96,8 @@
         return [[[PlaytomicResponse alloc] initWithError:401] autorelease];
     }
     
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -151,7 +152,8 @@
     NSString *datemaxsafe = datemax == nil ? @"" : [df stringFromDate:datemax];
     NSInteger numfilters = customfilter == nil ? 0 : [customfilter count];
     
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -224,7 +226,8 @@
 
 - (PlaytomicResponse*)saveLevel:(PlaytomicLevel*)level
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -298,7 +301,8 @@
 {
     levelid_ = [levelid copy];
     
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -317,7 +321,7 @@
     
 }
 
-- (void)requestLoadFinished:(ASIHTTPRequest*)request
+- (void)requestLoadFinished:(PlaytomicURLRequest*)request
 {
     if (!(delegate && [delegate respondsToSelector:@selector(requestLoadPlayerLevelsFinished:)])) {
         return;
@@ -335,13 +339,13 @@
     // we got a response of some kind
     NSString *response = [request responseString];
     NSString *json = [[NSString alloc] initWithString:response];
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    PlaytomicSBJsonParser *parser = [[PlaytomicSBJsonParser alloc] init];
     NSArray *data = [parser objectWithString:json error:nil];
     NSInteger status = [[data valueForKey:@"Status"] integerValue];
     
     [json release];
     [parser release];
-    
+    [request release];
     // failed on the server side
     if(status != 1)
     {
@@ -378,7 +382,8 @@
         return;
     }
     
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -396,7 +401,7 @@
     
 }
 
-- (void)requestRateFinished:(ASIHTTPRequest*)request
+- (void)requestRateFinished:(PlaytomicURLRequest*)request
 {
     if (!(delegate && [delegate respondsToSelector:@selector(requestRatePlayerLevelsFinished:)])) {
         return;
@@ -414,7 +419,7 @@
     // we got a response of some kind
     NSString *response = [request responseString];
     NSString *json = [[NSString alloc] initWithString:response];
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    PlaytomicSBJsonParser *parser = [[PlaytomicSBJsonParser alloc] init];
     NSArray *data = [parser objectWithString:json error:nil];
     NSInteger status = [[data valueForKey:@"Status"] integerValue];
     NSInteger errorcode = [[data valueForKey:@"ErrorCode"] integerValue];
@@ -422,7 +427,7 @@
     //[request autorelrease];
     [json release];
     [parser release];
-    
+    [request release];
     // failed on the server side
     if(status != 1)
     {
@@ -473,7 +478,8 @@
     [df release];
     NSInteger numfilters = customfilter == nil ? 0 : [customfilter count];
     
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -512,12 +518,12 @@
                           andSection:section 
                            andAction:action
                  andCompleteDelegate:self 
-                 andCompleteSelector:@selector(requestLoadFinished:)
+                 andCompleteSelector:@selector(requestListFinished:)
                          andPostData:postData];       
     delegate = aDelegate;
 }
 
-- (void)requestListFinished:(ASIHTTPRequest*)request
+- (void)requestListFinished:(PlaytomicURLRequest*)request
 {
     if (!(delegate && [delegate respondsToSelector:@selector(requestListPlayerLevelsFinished:)])) {
         return;
@@ -535,14 +541,14 @@
     // we got a response of some kind
     NSString *response = [request responseString];
     NSString *json = [[NSString alloc] initWithString:response];
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    PlaytomicSBJsonParser *parser = [[PlaytomicSBJsonParser alloc] init];
     NSArray *data = [parser objectWithString:json error:nil];
     NSInteger status = [[data valueForKey:@"Status"] integerValue];
     
     //[request autorelease];
     [json release];
     [parser release];
-    
+    [request release];
     // failed on the server side
     if(status != 1)
     {
@@ -579,7 +585,8 @@
 - (void)saveAsyncLevel:(PlaytomicLevel*)level 
            andDelegate:(id<PlaytomicDelegate>)aDelegate
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -632,7 +639,7 @@
     
 }
 
-- (void)requestSaveFinished:(ASIHTTPRequest*)request
+- (void)requestSaveFinished:(PlaytomicURLRequest*)request
 {
     if (!(delegate && [delegate respondsToSelector:@selector(requestListPlayerLevelsFinished:)])) {
         return;
@@ -648,14 +655,14 @@
     
     NSString *response = [request responseString];       
     NSString *json = [[NSString alloc] initWithString:response];
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    PlaytomicSBJsonParser *parser = [[PlaytomicSBJsonParser alloc] init];
     NSArray *data = [parser objectWithString:json error:nil];
     NSInteger status = [[data valueForKey:@"Status"] integerValue];
     NSInteger errorcode = [[data valueForKey:@"ErrorCode"] integerValue];
     
     [json release];
     [parser release];
-    
+    [request release];
     if(status == 1)
     {
         NSDictionary *dvars = [data valueForKey:@"Data"];

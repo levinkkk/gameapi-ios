@@ -27,13 +27,13 @@
 #import "PlaytomicResponse.h"
 #import "Playtomic.h"
 #import "JSON/JSON.h"
-#import "ASI/ASIHTTPRequest.h"
 #import "PlaytomicRequest.h"
 #import "PlaytomicEncrypt.h"
+#import "PlaytomicURLRequest.h"
 
 @interface PlaytomicData()
 
-- (void)requestGetDataFinished:(ASIHTTPRequest*)request;
+- (void)requestGetDataFinished:(PlaytomicURLRequest*)request;
 
 @end
 
@@ -160,7 +160,8 @@
                          andMonth:(NSInteger)month 
                           andYear:(NSInteger)year
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     NSMutableDictionary * postData = [[[NSMutableDictionary alloc] init] autorelease];
@@ -198,7 +199,8 @@
                               andMonth:(NSInteger)month 
                                andYear:(NSInteger)year
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     NSMutableDictionary * postData = [[[NSMutableDictionary alloc] init] autorelease];
@@ -468,7 +470,8 @@
                              andMonth:(NSInteger)month 
                               andYear:(NSInteger)year
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     NSMutableDictionary * postData = [[[NSMutableDictionary alloc] init] autorelease];
@@ -486,7 +489,7 @@
 // get data
 - (PlaytomicResponse*)getDataUrl:(NSString*)url
 {    
-    ASIHTTPRequest *request = [[[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:url]] autorelease];
+    PlaytomicURLRequest *request = [[[PlaytomicURLRequest alloc] initWithDomain:url] autorelease];
     [request startSynchronous];
     
     NSError *error = [request error];
@@ -500,7 +503,7 @@
     // we got a response of some kind
     NSString *response = [request responseString];
     NSString *json = [[NSString alloc] initWithString:response];
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    PlaytomicSBJsonParser *parser = [[PlaytomicSBJsonParser alloc] init];
     NSArray *data = [parser objectWithString:json error:nil];
     NSInteger status = [[data valueForKey:@"Status"] integerValue];
     
@@ -676,7 +679,8 @@
                  andYear:(NSInteger)year 
              andDelegate:(id<PlaytomicDelegate>)aDelegate
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     NSMutableDictionary * postData = [[[NSMutableDictionary alloc] init] autorelease];
@@ -722,7 +726,8 @@
                   andDelegate:(id<PlaytomicDelegate>)aDelegate
 {
     delegate = aDelegate;
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     NSMutableDictionary * postData = [[[NSMutableDictionary alloc] init] autorelease];
@@ -1030,7 +1035,8 @@
         type = [PlaytomicEncrypt md5:[NSString stringWithFormat:@"%@%@", @"data-levelrangedmetric-", [Playtomic getApiKey]]];
     }
     
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=y"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     NSMutableDictionary * postData = [[[NSMutableDictionary alloc] init] autorelease];
@@ -1050,16 +1056,16 @@
 - (void)getDataAsyncUrl:(NSString*)url 
             andDelegate:(id<PlaytomicDelegate>)aDelegate
 {    
-    ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:url]];
+    PlaytomicURLRequest *request = [[[PlaytomicURLRequest alloc] initWithDomain:url]autorelease];
 
     delegate = aDelegate;
     
     [request setDelegate:self];
-    request.didFinishSelector = @selector(requestGetDataFinished:);
+    request.completeSelector = @selector(requestGetDataFinished:);
     [request startAsynchronous];
 }
 
-- (void)requestGetDataFinished:(ASIHTTPRequest*)request
+- (void)requestGetDataFinished:(PlaytomicURLRequest*)request
 {
     if (!(delegate && [delegate respondsToSelector:requestFinished]))
     {
@@ -1079,14 +1085,14 @@
     // we got a response of some kind
     NSString *response = [request responseString];
     NSString *json = [[NSString alloc] initWithString:response];
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    PlaytomicSBJsonParser *parser = [[PlaytomicSBJsonParser alloc] init];
     NSArray *data = [parser objectWithString:json error:nil];
     NSInteger status = [[data valueForKey:@"Status"] integerValue];
     
     //[request autorelease];
     [json release];
     [parser release];
-    
+    [request release];
     // failed on the server side
     if(status != 1)
     {

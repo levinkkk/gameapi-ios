@@ -25,6 +25,8 @@
 
 #import "Playtomic.h"
 #import "Reachability.h"
+#import "UIKit/UIDevice.h"
+#import "PlaytomicExceptionHandler.h"
 
 @interface Playtomic ()
 @property (nonatomic,readwrite) NSInteger gameId;
@@ -32,6 +34,7 @@
 @property (nonatomic,copy) NSString *sourceUrl;
 @property (nonatomic,copy) NSString *baseUrl;
 @property (nonatomic,copy) NSString *apiKey;
+@property (nonatomic,copy) NSString *urlStart;
 @property (retain) PlaytomicLog *log;
 @property (retain) PlaytomicGameVars *gameVars;
 @property (retain) PlaytomicGeoIP *geoIP;
@@ -42,6 +45,8 @@
 @property (assign) BOOL hostActive;
 @property (assign) BOOL internetActive;
 @property (assign) NSInteger offlineQueueMaxSize;
+@property (nonatomic, assign) BOOL isWiFi;
+@property (nonatomic, assign) BOOL useSSL;
 @end
 
 @implementation Playtomic
@@ -61,6 +66,9 @@
 @synthesize internetActive;
 @synthesize offlineQueueMaxSize;
 @synthesize apiKey;
+@synthesize urlStart;
+@synthesize isWiFi;
+@synthesize useSSL;
 
 static Playtomic *instance = nil;
 
@@ -132,6 +140,11 @@ static Playtomic *instance = nil;
     return instance.baseUrl;
 }
 
++ (NSString*)getUrlStart
+{
+    return instance.urlStart;
+}
+
 + (BOOL)getInternetActive
 {
     // When the status is not connected we recheck
@@ -145,6 +158,11 @@ static Playtomic *instance = nil;
         [instance checkNetworkStatus:nil];
     }
     return instance.internetActive && instance.hostActive;
+}
+
++ (BOOL)getIsWiFiActive
+{
+    return [Playtomic getInternetActive] && instance.isWiFi;
 }
 
 + (NSInteger)getOfflineQueueMaxSize
@@ -171,6 +189,13 @@ static Playtomic *instance = nil;
     }
 }
 
++ (void)setSSL
+{
+    instance.useSSL = YES;
+    instance.urlStart = @"https://g";
+    NSLog(@"You are now using SSL for your api requests.  This feature is for premium users only, if your account is not premium the data you send will be ignored.");    
+}
+
 - (id)initWithGameId:(NSInteger)gameid 
              andGUID:(NSString*)gameguid 
            andAPIKey:(NSString*)apikey
@@ -188,8 +213,10 @@ static Playtomic *instance = nil;
     instance.sourceUrl = [NSString stringWithFormat:@"http://ios.com/%@/%@/%@", model, system, version];
     instance.baseUrl = @"ios.com";
     instance.apiKey = apikey;
+    instance.urlStart = @"http://g";
 
     instance.log = [[[PlaytomicLog alloc] initWithGameId:gameid andGUID:gameguid]autorelease ];
+    //instance.log = 0x131245;
     instance.gameVars = [[[PlaytomicGameVars alloc] init] autorelease];
     instance.geoIP = [[[PlaytomicGeoIP alloc] init] autorelease];
     instance.leaderboards = [[[PlaytomicLeaderboards alloc] init] autorelease ];
@@ -228,7 +255,7 @@ static Playtomic *instance = nil;
         {
             //NSLog(@"The internet is down.");
             instance.internetActive = NO;
-            
+            instance.isWiFi = NO;
             break;
             
         }
@@ -236,7 +263,7 @@ static Playtomic *instance = nil;
         {
             //NSLog(@"The internet is working via WIFI.");
             instance.internetActive = YES;
-            
+            instance.isWiFi = YES;
             break;
             
         }
@@ -244,6 +271,7 @@ static Playtomic *instance = nil;
         {
             //NSLog(@"The internet is working via WWAN.");
             instance.internetActive = YES;
+            instance.isWiFi = NO;
             
             break;
             
@@ -283,6 +311,8 @@ static Playtomic *instance = nil;
 }
 
 - (void)dealloc {
+    [PlaytomicExceptionHandler unregisterDefaultHandlers];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     self.gameGuid = nil;
     self.sourceUrl = nil;
     self.baseUrl = nil;

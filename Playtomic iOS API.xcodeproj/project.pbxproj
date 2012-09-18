@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		471DC6D1147AA71100044E72 /* PlaytomicURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 471DC6D0147AA71000044E72 /* PlaytomicURLRequest.m */; };
+		47413D8614BC763E0022F423 /* PlaytomicExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 47413D8514BC763E0022F423 /* PlaytomicExceptionHandler.m */; };
+		476FCF3E147E9F52006C51BA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 476FCF3D147E9F52006C51BA /* SystemConfiguration.framework */; };
 		47B5A2E1146C66720019CE8C /* PlaytomicPrivateLeaderboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B5A2E0146C66710019CE8C /* PlaytomicPrivateLeaderboard.m */; };
 		47E2781414684EE300F0EBBC /* PlaytomicRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E2781314684EE300F0EBBC /* PlaytomicRequest.m */; };
 		7835BEF3137A27B400CF0211 /* PlaytomicLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835BEF1137A27B300CF0211 /* PlaytomicLog.m */; };
@@ -15,6 +18,7 @@
 		78565DA0137DDBC80062E5D5 /* PlaytomicLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 78565D9F137DDBC80062E5D5 /* PlaytomicLink.m */; };
 		78565DA4137DDC9D0062E5D5 /* PlaytomicData.m in Sources */ = {isa = PBXBuildFile; fileRef = 78565DA3137DDC9D0062E5D5 /* PlaytomicData.m */; };
 		785E87481379FEAD00094336 /* PlaytomicGameVars.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E87471379FEAD00094336 /* PlaytomicGameVars.m */; };
+<<<<<<< HEAD:Playtomic iOS API.xcodeproj/project.pbxproj
 		785E8872137A18A200094336 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E8867137A18A200094336 /* NSObject+SBJSON.m */; };
 		785E8873137A18A200094336 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E8869137A18A200094336 /* NSString+SBJSON.m */; };
 		785E8874137A18A200094336 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E886B137A18A200094336 /* SBJsonBase.m */; };
@@ -22,6 +26,13 @@
 		785E8876137A18A200094336 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E886F137A18A200094336 /* SBJsonWriter.m */; };
 		786509D416093A43003897F5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 786509D216093A43003897F5 /* LICENSE */; };
 		786509D516093A43003897F5 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 786509D316093A43003897F5 /* README.markdown */; };
+=======
+		785E8872137A18A200094336 /* NSObject+PlaytomicSBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E8867137A18A200094336 /* NSObject+PlaytomicSBJSON.m */; };
+		785E8873137A18A200094336 /* NSString+PlaytomicSBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E8869137A18A200094336 /* NSString+PlaytomicSBJSON.m */; };
+		785E8874137A18A200094336 /* PlaytomicSBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E886B137A18A200094336 /* PlaytomicSBJsonBase.m */; };
+		785E8875137A18A200094336 /* PlaytomicSBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E886D137A18A200094336 /* PlaytomicSBJsonParser.m */; };
+		785E8876137A18A200094336 /* PlaytomicSBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E886F137A18A200094336 /* PlaytomicSBJsonWriter.m */; };
+>>>>>>> a6cb841a0bdd6cff9842959ffebc9412a9675e70:ObjectiveCTest.xcodeproj/project.pbxproj
 		7881E3FB135FB42600B4E7F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7881E3FA135FB42600B4E7F5 /* UIKit.framework */; };
 		7881E3FD135FB42600B4E7F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7881E3FC135FB42600B4E7F5 /* Foundation.framework */; };
 		7881E3FF135FB42600B4E7F5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7881E3FE135FB42600B4E7F5 /* CoreGraphics.framework */; };
@@ -37,20 +48,7 @@
 		78F04CE9137B2238000C9E8D /* PlaytomicGeoIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F04CE8137B2238000C9E8D /* PlaytomicGeoIP.m */; };
 		78F04CEC137B56AD000C9E8D /* PlaytomicLeaderboards.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F04CEB137B56AD000C9E8D /* PlaytomicLeaderboards.m */; };
 		78F04CF2137B8F26000C9E8D /* PlaytomicScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F04CF1137B8F26000C9E8D /* PlaytomicScore.m */; };
-		78F04D6E137C491C000C9E8D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F04D6D137C491C000C9E8D /* MobileCoreServices.framework */; };
-		78F04D70137C4925000C9E8D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F04D6F137C4925000C9E8D /* CFNetwork.framework */; };
-		78F04D72137C493B000C9E8D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F04D71137C493B000C9E8D /* SystemConfiguration.framework */; };
 		78F04D78137C49F8000C9E8D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F04D77137C49F8000C9E8D /* Reachability.m */; };
-		78F04DB2137C4D2F000C9E8D /* ASI LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 78F04D9C137C4D2F000C9E8D /* ASI LICENSE */; };
-		78F04DB3137C4D2F000C9E8D /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F04D9E137C4D2F000C9E8D /* ASIAuthenticationDialog.m */; };
-		78F04DB4137C4D2F000C9E8D /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F04DA1137C4D2F000C9E8D /* ASIDataCompressor.m */; };
-		78F04DB5137C4D2F000C9E8D /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F04DA3137C4D2F000C9E8D /* ASIDataDecompressor.m */; };
-		78F04DB6137C4D2F000C9E8D /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F04DA5137C4D2F000C9E8D /* ASIDownloadCache.m */; };
-		78F04DB7137C4D2F000C9E8D /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F04DA7137C4D2F000C9E8D /* ASIFormDataRequest.m */; };
-		78F04DB8137C4D2F000C9E8D /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F04DA9137C4D2F000C9E8D /* ASIHTTPRequest.m */; };
-		78F04DB9137C4D2F000C9E8D /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F04DAD137C4D2F000C9E8D /* ASIInputStream.m */; };
-		78F04DBA137C4D2F000C9E8D /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F04DAF137C4D2F000C9E8D /* ASINetworkQueue.m */; };
-		78F04DBC137C4DB6000C9E8D /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F04DBB137C4DB6000C9E8D /* libz.1.2.3.dylib */; };
 		78F04DBF137C5495000C9E8D /* PlaytomicEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F04DBE137C5495000C9E8D /* PlaytomicEncrypt.m */; };
 		78F04DC2137C6C85000C9E8D /* PlaytomicLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F04DC1137C6C84000C9E8D /* PlaytomicLevel.m */; };
 		78F04DC8137C7983000C9E8D /* PlaytomicPlayerLevels.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F04DC7137C7982000C9E8D /* PlaytomicPlayerLevels.m */; };
@@ -58,6 +56,11 @@
 
 /* Begin PBXFileReference section */
 		3B71EBB3143A36E9001F583B /* PlaytomicLogRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PlaytomicLogRequest.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		471DC6CF147AA71000044E72 /* PlaytomicURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaytomicURLRequest.h; sourceTree = "<group>"; };
+		471DC6D0147AA71000044E72 /* PlaytomicURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaytomicURLRequest.m; sourceTree = "<group>"; };
+		47413D8414BC763E0022F423 /* PlaytomicExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaytomicExceptionHandler.h; sourceTree = "<group>"; };
+		47413D8514BC763E0022F423 /* PlaytomicExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaytomicExceptionHandler.m; sourceTree = "<group>"; };
+		476FCF3D147E9F52006C51BA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		47B5A2DF146C66710019CE8C /* PlaytomicPrivateLeaderboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaytomicPrivateLeaderboard.h; sourceTree = "<group>"; };
 		47B5A2E0146C66710019CE8C /* PlaytomicPrivateLeaderboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaytomicPrivateLeaderboard.m; sourceTree = "<group>"; };
 		47E2781214684EE300F0EBBC /* PlaytomicRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaytomicRequest.h; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 		785E87461379FEAD00094336 /* PlaytomicGameVars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaytomicGameVars.h; sourceTree = "<group>"; };
 		785E87471379FEAD00094336 /* PlaytomicGameVars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaytomicGameVars.m; sourceTree = "<group>"; };
 		785E8864137A18A200094336 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+<<<<<<< HEAD:Playtomic iOS API.xcodeproj/project.pbxproj
 		785E8866137A18A200094336 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		785E8867137A18A200094336 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
 		785E8868137A18A200094336 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
@@ -86,6 +90,18 @@
 		785E886F137A18A200094336 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		786509D216093A43003897F5 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		786509D316093A43003897F5 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+=======
+		785E8866137A18A200094336 /* NSObject+PlaytomicSBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PlaytomicSBJSON.h"; sourceTree = "<group>"; };
+		785E8867137A18A200094336 /* NSObject+PlaytomicSBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PlaytomicSBJSON.m"; sourceTree = "<group>"; };
+		785E8868137A18A200094336 /* NSString+PlaytomicSBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PlaytomicSBJSON.h"; sourceTree = "<group>"; };
+		785E8869137A18A200094336 /* NSString+PlaytomicSBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PlaytomicSBJSON.m"; sourceTree = "<group>"; };
+		785E886A137A18A200094336 /* PlaytomicSBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaytomicSBJsonBase.h; sourceTree = "<group>"; };
+		785E886B137A18A200094336 /* PlaytomicSBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaytomicSBJsonBase.m; sourceTree = "<group>"; };
+		785E886C137A18A200094336 /* PlaytomicSBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaytomicSBJsonParser.h; sourceTree = "<group>"; };
+		785E886D137A18A200094336 /* PlaytomicSBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaytomicSBJsonParser.m; sourceTree = "<group>"; };
+		785E886E137A18A200094336 /* PlaytomicSBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaytomicSBJsonWriter.h; sourceTree = "<group>"; };
+		785E886F137A18A200094336 /* PlaytomicSBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaytomicSBJsonWriter.m; sourceTree = "<group>"; };
+>>>>>>> a6cb841a0bdd6cff9842959ffebc9412a9675e70:ObjectiveCTest.xcodeproj/project.pbxproj
 		7881E3FA135FB42600B4E7F5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7881E3FC135FB42600B4E7F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7881E3FE135FB42600B4E7F5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -113,33 +129,8 @@
 		78F04CEB137B56AD000C9E8D /* PlaytomicLeaderboards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PlaytomicLeaderboards.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		78F04CF0137B8F26000C9E8D /* PlaytomicScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PlaytomicScore.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		78F04CF1137B8F26000C9E8D /* PlaytomicScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PlaytomicScore.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		78F04D6D137C491C000C9E8D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		78F04D6F137C4925000C9E8D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		78F04D71137C493B000C9E8D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		78F04D76137C49F8000C9E8D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Reachability.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		78F04D77137C49F8000C9E8D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		78F04D9C137C4D2F000C9E8D /* ASI LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ASI LICENSE"; sourceTree = "<group>"; };
-		78F04D9D137C4D2F000C9E8D /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
-		78F04D9E137C4D2F000C9E8D /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
-		78F04D9F137C4D2F000C9E8D /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
-		78F04DA0137C4D2F000C9E8D /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
-		78F04DA1137C4D2F000C9E8D /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
-		78F04DA2137C4D2F000C9E8D /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
-		78F04DA3137C4D2F000C9E8D /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
-		78F04DA4137C4D2F000C9E8D /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
-		78F04DA5137C4D2F000C9E8D /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
-		78F04DA6137C4D2F000C9E8D /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
-		78F04DA7137C4D2F000C9E8D /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
-		78F04DA8137C4D2F000C9E8D /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
-		78F04DA9137C4D2F000C9E8D /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
-		78F04DAA137C4D2F000C9E8D /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
-		78F04DAB137C4D2F000C9E8D /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
-		78F04DAC137C4D2F000C9E8D /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
-		78F04DAD137C4D2F000C9E8D /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
-		78F04DAE137C4D2F000C9E8D /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
-		78F04DAF137C4D2F000C9E8D /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
-		78F04DB0137C4D2F000C9E8D /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
-		78F04DBB137C4DB6000C9E8D /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		78F04DBD137C5494000C9E8D /* PlaytomicEncrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PlaytomicEncrypt.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		78F04DBE137C5495000C9E8D /* PlaytomicEncrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaytomicEncrypt.m; sourceTree = "<group>"; };
 		78F04DC0137C6C84000C9E8D /* PlaytomicLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PlaytomicLevel.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -153,10 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78F04DBC137C4DB6000C9E8D /* libz.1.2.3.dylib in Frameworks */,
-				78F04D72137C493B000C9E8D /* SystemConfiguration.framework in Frameworks */,
-				78F04D70137C4925000C9E8D /* CFNetwork.framework in Frameworks */,
-				78F04D6E137C491C000C9E8D /* MobileCoreServices.framework in Frameworks */,
+				476FCF3E147E9F52006C51BA /* SystemConfiguration.framework in Frameworks */,
 				7881E3FB135FB42600B4E7F5 /* UIKit.framework in Frameworks */,
 				7881E3FD135FB42600B4E7F5 /* Foundation.framework in Frameworks */,
 				7881E3FF135FB42600B4E7F5 /* CoreGraphics.framework in Frameworks */,
@@ -170,16 +158,16 @@
 			isa = PBXGroup;
 			children = (
 				785E8864137A18A200094336 /* JSON.h */,
-				785E8866137A18A200094336 /* NSObject+SBJSON.h */,
-				785E8867137A18A200094336 /* NSObject+SBJSON.m */,
-				785E8868137A18A200094336 /* NSString+SBJSON.h */,
-				785E8869137A18A200094336 /* NSString+SBJSON.m */,
-				785E886A137A18A200094336 /* SBJsonBase.h */,
-				785E886B137A18A200094336 /* SBJsonBase.m */,
-				785E886C137A18A200094336 /* SBJsonParser.h */,
-				785E886D137A18A200094336 /* SBJsonParser.m */,
-				785E886E137A18A200094336 /* SBJsonWriter.h */,
-				785E886F137A18A200094336 /* SBJsonWriter.m */,
+				785E8866137A18A200094336 /* NSObject+PlaytomicSBJSON.h */,
+				785E8867137A18A200094336 /* NSObject+PlaytomicSBJSON.m */,
+				785E8868137A18A200094336 /* NSString+PlaytomicSBJSON.h */,
+				785E8869137A18A200094336 /* NSString+PlaytomicSBJSON.m */,
+				785E886A137A18A200094336 /* PlaytomicSBJsonBase.h */,
+				785E886B137A18A200094336 /* PlaytomicSBJsonBase.m */,
+				785E886C137A18A200094336 /* PlaytomicSBJsonParser.h */,
+				785E886D137A18A200094336 /* PlaytomicSBJsonParser.m */,
+				785E886E137A18A200094336 /* PlaytomicSBJsonWriter.h */,
+				785E886F137A18A200094336 /* PlaytomicSBJsonWriter.m */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -209,10 +197,7 @@
 		7881E3F9135FB42600B4E7F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				78F04DBB137C4DB6000C9E8D /* libz.1.2.3.dylib */,
-				78F04D71137C493B000C9E8D /* SystemConfiguration.framework */,
-				78F04D6F137C4925000C9E8D /* CFNetwork.framework */,
-				78F04D6D137C491C000C9E8D /* MobileCoreServices.framework */,
+				476FCF3D147E9F52006C51BA /* SystemConfiguration.framework */,
 				7881E3FA135FB42600B4E7F5 /* UIKit.framework */,
 				7881E3FC135FB42600B4E7F5 /* Foundation.framework */,
 				7881E3FE135FB42600B4E7F5 /* CoreGraphics.framework */,
@@ -268,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				785E8862137A18A200094336 /* JSON */,
-				78F04D9B137C4D2F000C9E8D /* ASI */,
 				78F04D75137C49F7000C9E8D /* Reachability */,
 				7881E42C135FB93500B4E7F5 /* Playtomic.h */,
 				7881E42D135FB93500B4E7F5 /* Playtomic.m */,
@@ -300,6 +284,10 @@
 				47E2781314684EE300F0EBBC /* PlaytomicRequest.m */,
 				47B5A2DF146C66710019CE8C /* PlaytomicPrivateLeaderboard.h */,
 				47B5A2E0146C66710019CE8C /* PlaytomicPrivateLeaderboard.m */,
+				471DC6CF147AA71000044E72 /* PlaytomicURLRequest.h */,
+				471DC6D0147AA71000044E72 /* PlaytomicURLRequest.m */,
+				47413D8414BC763E0022F423 /* PlaytomicExceptionHandler.h */,
+				47413D8514BC763E0022F423 /* PlaytomicExceptionHandler.m */,
 			);
 			path = Playtomic;
 			sourceTree = "<group>";
@@ -311,42 +299,6 @@
 				78F04D77137C49F8000C9E8D /* Reachability.m */,
 			);
 			path = Reachability;
-			sourceTree = "<group>";
-		};
-		78F04D9B137C4D2F000C9E8D /* ASI */ = {
-			isa = PBXGroup;
-			children = (
-				78F04D9C137C4D2F000C9E8D /* ASI LICENSE */,
-				78F04D9D137C4D2F000C9E8D /* ASIAuthenticationDialog.h */,
-				78F04D9E137C4D2F000C9E8D /* ASIAuthenticationDialog.m */,
-				78F04D9F137C4D2F000C9E8D /* ASICacheDelegate.h */,
-				78F04DA0137C4D2F000C9E8D /* ASIDataCompressor.h */,
-				78F04DA1137C4D2F000C9E8D /* ASIDataCompressor.m */,
-				78F04DA2137C4D2F000C9E8D /* ASIDataDecompressor.h */,
-				78F04DA3137C4D2F000C9E8D /* ASIDataDecompressor.m */,
-				78F04DA4137C4D2F000C9E8D /* ASIDownloadCache.h */,
-				78F04DA5137C4D2F000C9E8D /* ASIDownloadCache.m */,
-				78F04DA6137C4D2F000C9E8D /* ASIFormDataRequest.h */,
-				78F04DA7137C4D2F000C9E8D /* ASIFormDataRequest.m */,
-				78F04DA8137C4D2F000C9E8D /* ASIHTTPRequest.h */,
-				78F04DA9137C4D2F000C9E8D /* ASIHTTPRequest.m */,
-				78F04DAA137C4D2F000C9E8D /* ASIHTTPRequestConfig.h */,
-				78F04DAB137C4D2F000C9E8D /* ASIHTTPRequestDelegate.h */,
-				78F04DAC137C4D2F000C9E8D /* ASIInputStream.h */,
-				78F04DAD137C4D2F000C9E8D /* ASIInputStream.m */,
-				78F04DAE137C4D2F000C9E8D /* ASINetworkQueue.h */,
-				78F04DAF137C4D2F000C9E8D /* ASINetworkQueue.m */,
-				78F04DB0137C4D2F000C9E8D /* ASIProgressDelegate.h */,
-				78F04DB1137C4D2F000C9E8D /* ASIWebPageRequest */,
-			);
-			path = ASI;
-			sourceTree = "<group>";
-		};
-		78F04DB1137C4D2F000C9E8D /* ASIWebPageRequest */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ASIWebPageRequest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,9 +354,12 @@
 				7881E405135FB42600B4E7F5 /* InfoPlist.strings in Resources */,
 				7881E412135FB42700B4E7F5 /* MainWindow_iPhone.xib in Resources */,
 				7881E419135FB42700B4E7F5 /* MainWindow_iPad.xib in Resources */,
+<<<<<<< HEAD:Playtomic iOS API.xcodeproj/project.pbxproj
 				78F04DB2137C4D2F000C9E8D /* ASI LICENSE in Resources */,
 				786509D416093A43003897F5 /* LICENSE in Resources */,
 				786509D516093A43003897F5 /* README.markdown in Resources */,
+=======
+>>>>>>> a6cb841a0bdd6cff9842959ffebc9412a9675e70:ObjectiveCTest.xcodeproj/project.pbxproj
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,11 +377,11 @@
 				7881E421135FB46600B4E7F5 /* MyClass.m in Sources */,
 				7881E432135FB93500B4E7F5 /* Playtomic.m in Sources */,
 				785E87481379FEAD00094336 /* PlaytomicGameVars.m in Sources */,
-				785E8872137A18A200094336 /* NSObject+SBJSON.m in Sources */,
-				785E8873137A18A200094336 /* NSString+SBJSON.m in Sources */,
-				785E8874137A18A200094336 /* SBJsonBase.m in Sources */,
-				785E8875137A18A200094336 /* SBJsonParser.m in Sources */,
-				785E8876137A18A200094336 /* SBJsonWriter.m in Sources */,
+				785E8872137A18A200094336 /* NSObject+PlaytomicSBJSON.m in Sources */,
+				785E8873137A18A200094336 /* NSString+PlaytomicSBJSON.m in Sources */,
+				785E8874137A18A200094336 /* PlaytomicSBJsonBase.m in Sources */,
+				785E8875137A18A200094336 /* PlaytomicSBJsonParser.m in Sources */,
+				785E8876137A18A200094336 /* PlaytomicSBJsonWriter.m in Sources */,
 				7835BEF3137A27B400CF0211 /* PlaytomicLog.m in Sources */,
 				7835BEF4137A27B400CF0211 /* PlaytomicLogRequest.m in Sources */,
 				7835BEFA137A400500CF0211 /* PlaytomicResponse.m in Sources */,
@@ -434,14 +389,6 @@
 				78F04CEC137B56AD000C9E8D /* PlaytomicLeaderboards.m in Sources */,
 				78F04CF2137B8F26000C9E8D /* PlaytomicScore.m in Sources */,
 				78F04D78137C49F8000C9E8D /* Reachability.m in Sources */,
-				78F04DB3137C4D2F000C9E8D /* ASIAuthenticationDialog.m in Sources */,
-				78F04DB4137C4D2F000C9E8D /* ASIDataCompressor.m in Sources */,
-				78F04DB5137C4D2F000C9E8D /* ASIDataDecompressor.m in Sources */,
-				78F04DB6137C4D2F000C9E8D /* ASIDownloadCache.m in Sources */,
-				78F04DB7137C4D2F000C9E8D /* ASIFormDataRequest.m in Sources */,
-				78F04DB8137C4D2F000C9E8D /* ASIHTTPRequest.m in Sources */,
-				78F04DB9137C4D2F000C9E8D /* ASIInputStream.m in Sources */,
-				78F04DBA137C4D2F000C9E8D /* ASINetworkQueue.m in Sources */,
 				78F04DBF137C5495000C9E8D /* PlaytomicEncrypt.m in Sources */,
 				78F04DC2137C6C85000C9E8D /* PlaytomicLevel.m in Sources */,
 				78F04DC8137C7983000C9E8D /* PlaytomicPlayerLevels.m in Sources */,
@@ -449,6 +396,8 @@
 				78565DA4137DDC9D0062E5D5 /* PlaytomicData.m in Sources */,
 				47E2781414684EE300F0EBBC /* PlaytomicRequest.m in Sources */,
 				47B5A2E1146C66720019CE8C /* PlaytomicPrivateLeaderboard.m in Sources */,
+				471DC6D1147AA71100044E72 /* PlaytomicURLRequest.m in Sources */,
+				47413D8614BC763E0022F423 /* PlaytomicExceptionHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,11 +469,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+<<<<<<< HEAD:Playtomic iOS API.xcodeproj/project.pbxproj
 				GCC_PREFIX_HEADER = "ObjectiveCTest/Playtomic iOS API-Prefix.pch";
 				INFOPLIST_FILE = "ObjectiveCTest/Playtomic iOS API-Info.plist";
+=======
+				GCC_PREFIX_HEADER = "ObjectiveCTest/ObjectiveCTest-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "ObjectiveCTest/ObjectiveCTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+>>>>>>> a6cb841a0bdd6cff9842959ffebc9412a9675e70:ObjectiveCTest.xcodeproj/project.pbxproj
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../Downloads/Flurry iPhone SDK v2.8.4/FlurryLib\"",
@@ -540,10 +497,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+<<<<<<< HEAD:Playtomic iOS API.xcodeproj/project.pbxproj
 				GCC_PREFIX_HEADER = "ObjectiveCTest/Playtomic iOS API-Prefix.pch";
 				INFOPLIST_FILE = "ObjectiveCTest/Playtomic iOS API-Info.plist";
+=======
+				GCC_PREFIX_HEADER = "ObjectiveCTest/ObjectiveCTest-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "ObjectiveCTest/ObjectiveCTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+>>>>>>> a6cb841a0bdd6cff9842959ffebc9412a9675e70:ObjectiveCTest.xcodeproj/project.pbxproj
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../Downloads/Flurry iPhone SDK v2.8.4/FlurryLib\"",

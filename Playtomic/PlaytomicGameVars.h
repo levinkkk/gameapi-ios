@@ -34,5 +34,8 @@
 
 - (PlaytomicResponse*) load;
 - (void) loadAsync: (id<PlaytomicDelegate>)delegate;
+- (PlaytomicResponse*) loadSingle:(NSString*)name;
+- (void) loadSingleAsync:(NSString*) name
+             andDelegate: (id<PlaytomicDelegate>)delegate;
 
 @end

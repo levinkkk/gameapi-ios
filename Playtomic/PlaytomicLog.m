@@ -72,7 +72,7 @@
     self.lastEventOccurence = [NSDate date];
     self.sourceUrl = [Playtomic getSourceUrl];
     self.baseUrl = [Playtomic getBaseUrl];
-    self.trackUrl = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/tracker/q.aspx?swfid=%d&url=%@&q="
+    self.trackUrl = [NSString stringWithFormat:@"%@.api.playtomic.com/tracker/q.aspx?swfid=%d&url=%@&q="
                                                 , gameguid
                                                 , gameid
                                                 , sourceUrl];
@@ -97,7 +97,7 @@
 }
 
 - (void) view 
-{
+{   
     [self sendEvent:[NSString stringWithFormat:@"v/%d", self.views + 1] 
           andCommit:YES];
 }

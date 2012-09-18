@@ -27,13 +27,13 @@
 #import "PlaytomicGameVars.h"
 #import "PlaytomicResponse.h"
 #import "JSON/JSON.h"
-#import "ASI/ASIHTTPRequest.h"
 #import "PlaytomicRequest.h"
 #import "PlaytomicEncrypt.h"
+#import "PlaytomicURLRequest.h"
 
 @interface PlaytomicGameVars() 
 
-- (void)requestLoadFinished:(ASIHTTPRequest*)request;
+- (void)requestLoadFinished:(PlaytomicURLRequest*)request;
 
 @end
 
@@ -41,7 +41,8 @@
 
 - (PlaytomicResponse*)load
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=m"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=m"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -76,7 +77,8 @@
 
 - (void)loadAsync:(id<PlaytomicDelegate>)aDelegate
 {
-    NSString *url = [NSString stringWithFormat:@"http://g%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=m"
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=m"
+                     , [Playtomic getUrlStart]
                      , [Playtomic getGameGuid]
                      , [Playtomic getGameId]];
     
@@ -92,7 +94,7 @@
     [PlaytomicRequest sendRequestUrl:url andSection:section andAction:action andCompleteDelegate:self andCompleteSelector:@selector(requestLoadFinished:) andPostData:postData];
 }
 
-- (void)requestLoadFinished:(ASIHTTPRequest*)request
+- (void)requestLoadFinished:(PlaytomicURLRequest*)request
 {    
     if (!(delegate && [delegate respondsToSelector:@selector(requestLoadGameVarsFinished:)])) {
         return;
@@ -110,10 +112,10 @@
     // we got a response of some kind
     NSString *response = [request responseString];
     NSString *json = [[NSString alloc] initWithString:response];
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    PlaytomicSBJsonParser *parser = [[PlaytomicSBJsonParser alloc] init];
     NSArray *data = [parser objectWithString:json error:nil];
     
-    //[request release];
+    [request release];
     [json release];
     [parser release];
     
@@ -147,5 +149,60 @@
     [delegate requestLoadGameVarsFinished:playtomicReponse];
 }
 
+- (PlaytomicResponse*)loadSingle:(NSString*)name 
+{
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=m"
+                     , [Playtomic getUrlStart]
+                     , [Playtomic getGameGuid]
+                     , [Playtomic getGameId]];
+    
+    
+    NSMutableDictionary * postData = [[[NSMutableDictionary alloc] init] autorelease];
+    
+    [postData setObject:name forKey:@"name"];
+    
+    NSString* section = [PlaytomicEncrypt md5:[NSString stringWithFormat:@"%@%@", @"gamevars-", [Playtomic getApiKey]]];
+    NSString* action = [PlaytomicEncrypt md5:[NSString stringWithFormat:@"%@%@", @"gamevars-loadsingle-", [Playtomic getApiKey]]];
+    
+    
+    PlaytomicResponse* response = [PlaytomicRequest sendRequestUrl:url andSection:section andAction:action andPostData:postData];
+    // failed on the client / connectivty side
+    if(![response success])
+    {
+        return response;
+    }
+    
+    NSDictionary *dvars = [response dictionary];
+    
+    
+    
+    PlaytomicResponse *playtomicReponse = [[PlaytomicResponse alloc] initWithSuccess:YES 
+                                                                        andErrorCode:0 
+                                                                             andDict:dvars];
+    [playtomicReponse autorelease];
+    
+    
+    return playtomicReponse;
+}
+
+- (void)loadSingleAsync:(NSString*)name andDelegate:(id<PlaytomicDelegate>)aDelegate
+{
+    NSString *url = [NSString stringWithFormat:@"%@%@.api.playtomic.com/v3/api.aspx?swfid=%d&js=m"
+                     , [Playtomic getUrlStart]
+                     , [Playtomic getGameGuid]
+                     , [Playtomic getGameId]];
+    
+    
+    NSMutableDictionary * postData = [[[NSMutableDictionary alloc] init] autorelease];
+    
+    
+    
+    NSString* section = [PlaytomicEncrypt md5:[NSString stringWithFormat:@"%@%@", @"gamevars-", [Playtomic getApiKey]]];
+    NSString* action = [PlaytomicEncrypt md5:[NSString stringWithFormat:@"%@%@", @"gamevars-loadsingle-", [Playtomic getApiKey]]];
+    
+    [postData setObject:name forKey:@"name"];
+    delegate = aDelegate;
+    [PlaytomicRequest sendRequestUrl:url andSection:section andAction:action andCompleteDelegate:self andCompleteSelector:@selector(requestLoadFinished:) andPostData:postData];
+}
 
 @end

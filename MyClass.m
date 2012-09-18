@@ -24,6 +24,7 @@
  */
 
 #import "MyClass.h"
+#import "PlaytomicExceptionHandler.h"
 
 @implementation MyClass
 
@@ -37,10 +38,10 @@
         // Get your credentials from the Playtomic dashboard 
         // (add or select game then go to API page)
         //
-        [[Playtomic alloc] initWithGameId:4603 andGUID:@"9f3f3b43cb234025" andAPIKey:@"548435a4e71445b49f939fd33d5185"]; 
-        
+        [[Playtomic alloc] initWithGameId:6918 andGUID:@"651351ba71994275" andAPIKey:@"50df92458b0249a8813df843d47b0a"];
+        [Playtomic setSSL];
+        [PlaytomicExceptionHandler registerDefaultHandlersWithDelegate:self];
         [[Playtomic Log] view];
-        self.levelid = @"4e9ef2b94d81233f30921596";
     }    
     return self;
 }
@@ -377,7 +378,7 @@
 }
 
 - (void)logCustomMetric
-{
+{    
     NSLog(@"Log custom metric");
     [[Playtomic Log] customMetricName:@"custom" andGroup:@"group" andUnique:NO];
     //[[Playtomic Log] forceSend];
@@ -1233,4 +1234,13 @@
     [super dealloc];
 }
 
+- (NSString*)signalRaised:(int)signal
+{
+    return [NSString stringWithFormat:@"game crashed by signal: %d", signal];    
+}
+
+- (NSString*)exceptionRaised:(NSException*)exception
+{
+    return [NSString stringWithFormat:@"game crashed by exception: %d", [exception name]];
+}
 @end
